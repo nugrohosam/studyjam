@@ -2,4 +2,4 @@
 - API DOC : https://documenter.getpostman.com/view/4473147/UVXnFZR1
 
 # Spec
-- DB : h2
+- DB : h2 (in memory volatile)
