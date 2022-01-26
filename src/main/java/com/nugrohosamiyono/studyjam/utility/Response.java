@@ -1,6 +1,6 @@
 package com.nugrohosamiyono.studyjam.utility;
 
-import com.nugrohosamiyono.studyjam.application.dto.ResponseGlobal;
+import com.nugrohosamiyono.studyjam.application.response.ResponseGlobal;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,8 +1,10 @@
 package com.nugrohosamiyono.studyjam.application.controllers.v1;
 
-import com.nugrohosamiyono.studyjam.application.dto.ResponseGlobal;
+import javax.validation.Valid;
+
 import com.nugrohosamiyono.studyjam.application.request.v1.UserCreate;
 import com.nugrohosamiyono.studyjam.application.request.v1.UserUpdate;
+import com.nugrohosamiyono.studyjam.application.response.ResponseGlobal;
 import com.nugrohosamiyono.studyjam.presist.usecases.UserUseCase;
 import com.nugrohosamiyono.studyjam.utility.Response;
 
@@ -33,7 +35,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<ResponseGlobal> create(
-            @RequestBody UserCreate userCreate) {
+        @Valid @RequestBody UserCreate userCreate) {        
         useCase.createUser(userCreate);
         return Response.buildV1("Success create user");
     }

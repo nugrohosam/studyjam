@@ -1,4 +1,4 @@
-package com.nugrohosamiyono.studyjam.application.dto;
+package com.nugrohosamiyono.studyjam.application.response;
 
 import lombok.Data;
 
