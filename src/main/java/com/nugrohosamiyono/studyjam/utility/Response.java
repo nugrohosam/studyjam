@@ -25,11 +25,11 @@ public class Response {
         return new ResponseEntity<ResponseGlobal>(res, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
-    public static ResponseEntity<ResponseGlobal> buildBadRequestV1(Object data) {
+    public static ResponseEntity<ResponseGlobal> buildBadRequestV1(Object errors) {
         var res = new ResponseGlobal();
         res.setCode(-2);
         res.setStatus("BAD REQUEST");
-        res.setErorrs(data);
+        res.setErorrs(errors);
 
         return new ResponseEntity<ResponseGlobal>(res, HttpStatus.BAD_REQUEST);
     }

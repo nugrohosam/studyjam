@@ -28,7 +28,7 @@ public class UserUseCase {
     public void createUser(UserCreate userCreate) {
         var newUser = new User();
         newUser.setName(userCreate.getName());
-        newUser.setAge(userCreate.getAge());
+        newUser.setAge(userCreate.getAge().intValue());
 
         saveUser(newUser);
     }

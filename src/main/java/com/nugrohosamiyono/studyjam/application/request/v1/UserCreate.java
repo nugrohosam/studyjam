@@ -9,12 +9,12 @@ import lombok.Data;
 @Data
 public class UserCreate {
 
-    @NotNull(message = "name boleh null")
-    @NotBlank(message = "name boleh blank")
+    @NotNull(message = "name tdk boleh null")
+    @NotBlank(message = "name tdk boleh blank")
     private String name;
     
-    @NotNull(message = "age boleh null")
     @Max(value = 10L)
-    private int age;
+    @NotNull(message = "age tdk boleh null")
+    private Long age;
 
 }

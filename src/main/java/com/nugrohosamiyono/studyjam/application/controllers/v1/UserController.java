@@ -9,6 +9,7 @@ import com.nugrohosamiyono.studyjam.presist.usecases.UserUseCase;
 import com.nugrohosamiyono.studyjam.utility.Response;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.AllArgsConstructor;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1/user")
 @AllArgsConstructor
 public class UserController {
