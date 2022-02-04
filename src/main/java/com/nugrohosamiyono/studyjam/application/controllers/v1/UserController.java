@@ -35,7 +35,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<ResponseGlobal> create(
-        @Valid @RequestBody UserCreate userCreate) {        
+        @Valid @RequestBody UserCreate userCreate) throws Exception {        
         useCase.createUser(userCreate);
         return Response.buildV1("Success create user");
     }

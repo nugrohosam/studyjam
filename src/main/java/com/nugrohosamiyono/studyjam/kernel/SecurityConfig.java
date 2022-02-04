@@ -22,6 +22,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         var headerFilter = new HeaderFilter();
         http.addFilterBefore(headerFilter, UsernamePasswordAuthenticationFilter.class);
-        // http builder configurations for authorize requests and form login (see below)
     }
 }
