@@ -44,7 +44,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<ResponseGlobal> update(@PathVariable Long id,
-    @RequestBody UserUpdate userUpdate) throws Exception {
+    @Valid @RequestBody UserUpdate userUpdate) throws Exception {
         useCase.updateUser(id, userUpdate);
         return Response.buildV1("Success update user");
     }
