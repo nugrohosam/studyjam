@@ -16,11 +16,11 @@ public class Response {
         return new ResponseEntity<ResponseGlobal>(res, HttpStatus.OK);
     }
     
-    public static ResponseEntity<ResponseGlobal> buildErrorV1(Object data) {
+    public static ResponseEntity<ResponseGlobal> buildErrorV1() {
         var res = new ResponseGlobal();
         res.setCode(-1);
-        res.setStatus("NOT OK");
-        res.setData(data);
+        res.setStatus("SERVER ERROR");
+        res.setMessage("INTERNAL SERVER ERROR");
 
         return new ResponseEntity<ResponseGlobal>(res, HttpStatus.INTERNAL_SERVER_ERROR);
     }
@@ -29,7 +29,16 @@ public class Response {
         var res = new ResponseGlobal();
         res.setCode(-2);
         res.setStatus("BAD REQUEST");
-        res.setData(data);
+        res.setErorrs(data);
+
+        return new ResponseEntity<ResponseGlobal>(res, HttpStatus.BAD_REQUEST);
+    }
+
+    public static ResponseEntity<ResponseGlobal> buildErrorBusinessV1(String message) {
+        var res = new ResponseGlobal();
+        res.setCode(-3);
+        res.setStatus("BUSINESS ERROR");
+        res.setMessage(message);
 
         return new ResponseEntity<ResponseGlobal>(res, HttpStatus.BAD_REQUEST);
     }

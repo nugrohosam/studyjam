@@ -22,8 +22,7 @@ public class HandlerException {
     protected ResponseEntity<ResponseGlobal> handleConflict(
             RuntimeException ex, WebRequest request) {
         Sentry.captureException(ex);
-        Sentry.captureMessage("This is error");
-        return Response.buildErrorV1(null);
+        return Response.buildErrorV1();
     }
 
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
@@ -36,7 +35,7 @@ public class HandlerException {
             errors.put(fieldName, errorMessage);
         });
         
-        return Response.buildErrorV1(errors);
+        return Response.buildBadRequestV1(errors);
     }
 
 }
